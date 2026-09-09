@@ -17,6 +17,7 @@ Format: `<emoji> <type>(<scope>): <subject>`
 - `type`: feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert
 - `scope`: optional, the affected area (e.g. `auth`, `api`)
 - `subject`: imperative mood, lowercase, no trailing period, <= 50 chars
+- language: always English, even when the conversation is in another language
 
 ## Emoji by type
 
@@ -31,8 +32,10 @@ Format: `<emoji> <type>(<scope>): <subject>`
 ## Body and footer
 
 - Blank line after the subject, then wrap the body at 72 columns and explain *why*, not *what*.
-- Breaking change: footer line `BREAKING CHANGE: <description>`.
+- Breaking change: mark it `<emoji> <type>(<scope>)!: <subject>` and add a
+  `BREAKING CHANGE: <description>` footer.
 - Issue references go in the footer: `Refs: #123`.
 - One logical change per commit - do not bundle unrelated edits.
+- Never add `Co-Authored-By`, `Generated with`, or any AI-attribution line.
 
 When to commit and which branches are protected: see `safe-git`.

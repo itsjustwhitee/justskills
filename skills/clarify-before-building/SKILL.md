@@ -38,7 +38,16 @@ Ask targeted, closed questions - not "tell me more":
 
 This skill is about *how* to build something already decided. If the open question is *what* to build at all, do that exploration first (use a dedicated brainstorming or discovery skill if the runtime provides one).
 
-## Red flags
+## Rationalization table
+
+| Excuse | Reality |
+|--------|---------|
+| "I'll pick a sensible default and adjust later." | Fine for a config value. Not for an architecture or an interface others build on. |
+| "Asking will look like I don't know how." | Shipping the wrong thing looks worse. One closed question costs 20 seconds. |
+| "The user is busy, I'll just start." | A wrong start wastes more of their time than the question would. |
+| "It's probably like the last feature." | "Probably" on a feature-sized task is the trigger, not the exemption. |
+
+## Red flags - STOP
 
 - About to scaffold files while unsure which of two interpretations is meant.
 - No stated definition of "done" for a feature-sized task.

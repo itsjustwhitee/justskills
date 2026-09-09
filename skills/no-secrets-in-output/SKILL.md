@@ -32,6 +32,26 @@ variables that hold any of the above.
 - Found a secret already committed or printed? Say so plainly and stop; treat it
   as compromised.
 
+## Before every commit
+
+Scan the staged diff (`git diff --cached`) before committing. If the repo has
+`gitleaks` or `detect-secrets`, run it and defer to its result; otherwise grep
+the diff for the patterns below. Any hit: stop, tell the user, do not commit.
+
+| What | Pattern |
+|------|---------|
+| AWS access key | `AKIA[0-9A-Z]{16}` |
+| GitHub token | `ghp_[0-9A-Za-z]{36}` / `github_pat_[0-9A-Za-z_]{50,}` |
+| Slack token | `xox[baprs]-[0-9A-Za-z-]{10,}` |
+| Google API key | `AIza[0-9A-Za-z\-_]{35}` |
+| Private key | `-----BEGIN (RSA\|EC\|OPENSSH\|PGP) PRIVATE KEY-----` |
+| Generic assignment | `(?i)(api[_-]?key\|secret\|token\|passwd\|password)\s*[:=]\s*['"][^'"]{8,}` |
+| High-entropy blob | base64/hex run of 32+ chars with no dictionary words |
+| Env file | any change adding `.env`, `.env.*`, `*.pem`, `id_rsa`, `credentials` |
+
+Pattern matches are a signal, not proof - a match may be a placeholder, a miss
+does not mean clean. Judgement still applies.
+
 ## Red flags
 
 - About to run `cat .env`, `env`, or `printenv` and put the result in a message.

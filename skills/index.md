@@ -14,5 +14,6 @@ OKF concept (`type: Skill`), per the current spec:
 * [Conventional Commits](/conventional-commits/SKILL.md) - commit message format with a leading gitmoji
 * [Open Knowledge Tracking](/open-knowledge-tracking/SKILL.md) - maintain a docs/knowledge/ OKF bundle of decisions and incidents
 * [Clarify Before Building](/clarify-before-building/SKILL.md) - fix objective and verification before feature work (draft)
+* [Verify Before Done](/verify-before-done/SKILL.md) - no "it works" claim without fresh evidence (draft)
 * [Stop After Repeated Failure](/stop-after-repeated-failure/SKILL.md) - stop and ask after 3 failed attempts at one task (draft)
 * [Delegate With Handoff](/delegate-with-handoff/SKILL.md) - define the task, hand it to a fresh, cheapest-capable agent with a written handoff, verify the result (draft)

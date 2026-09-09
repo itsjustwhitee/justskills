@@ -19,6 +19,7 @@ skills/                        OKF bundle root
   conventional-commits/        commit message format + emoji
   open-knowledge-tracking/     docs/knowledge/ decision & incident log
   clarify-before-building/     objective + verification before feature work   (draft)
+  verify-before-done/          no "it works" claim without fresh evidence     (draft)
   stop-after-repeated-failure/ 3-strikes rule                                 (draft)
   delegate-with-handoff/       task defined, cheap fresh agent, handoff, verify (draft)
 ```
@@ -60,7 +61,24 @@ place instead of copying files by hand.
   bundle. No OKF version is pinned - follow whatever the spec currently defines.
   Both specs ignore each other's extra frontmatter keys.
 - **Testing status.** `conventional-commits` and `open-knowledge-tracking` pass
-  application tests. `keep-it-simple`, `clarify-before-building`, and
-  `stop-after-repeated-failure` are `status: draft` until they pass subagent
-  pressure tests. `safe-git` and `no-secrets-in-output` are plain prohibitions
-  and ship as `stable`.
+  application tests. `keep-it-simple`, `clarify-before-building`,
+  `verify-before-done`, and `stop-after-repeated-failure` are `status: draft`
+  until they pass subagent pressure tests. `safe-git` and `no-secrets-in-output`
+  are plain prohibitions and ship as `stable`.
+
+## Related
+
+These skills cover working defaults and guardrails. For deeper workflow skills -
+TDD, systematic debugging, plan writing/execution, code review, git worktrees -
+pair this pack with [obra/superpowers](https://github.com/obra/superpowers).
+Where a justskills skill mentions "a dedicated skill if the runtime provides
+one", superpowers is usually the one it means.
+
+## Acknowledgements
+
+Patterns (not text) were adapted from public work, all MIT-licensed or public
+standards: [obra/superpowers](https://github.com/obra/superpowers) (verification
+gate, typed-confirmation and green-before-integrate git rules, rationalization
+tables); the Conventional Commits v1.0.0 spec (`type!:`, `BREAKING CHANGE:`);
+Michael Nygard's ADR format; and the secret regexes published by GitHub, AWS,
+and gitleaks.

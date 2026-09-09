@@ -10,7 +10,8 @@ status: draft
 
 ## Overview
 
-Three failed attempts at the *same* specific task means stop. Do not attempt a fourth blindly - it wastes tokens and rarely finds the cause.
+Three failed attempts at the *same* specific task means stop. Do not attempt a fourth 
+blindly - it wastes tokens and rarely finds the cause.
 
 ## Trigger
 
@@ -31,7 +32,17 @@ Three failed attempts at the *same* specific task means stop. Do not attempt a f
    - your current best hypothesis
    - the specific decision or piece of information you need from them.
 
-## Red flags - you are in a loop
+## Rationalization table
+
+| Excuse | Reality |
+|--------|---------|
+| "One more tweak and it's green." | You said that on attempt 2 and 3. The cause is misidentified. |
+| "I'm so close." | Three identical failures is not close. It is the same wall. |
+| "Stopping wastes the work so far." | Attempt 4 wastes more. The first 3 already told you the approach is wrong. |
+| "The deadline means I can't stop." | The deadline changes the time budget, not the fact that you don't know the cause. |
+| "Asking the user looks like giving up." | A crisp summary of 3 attempts + a hypothesis is progress, not surrender. |
+
+## Red flags - STOP
 
 - "One more small tweak will fix it."
 - Re-running the same failing command hoping for a different result.

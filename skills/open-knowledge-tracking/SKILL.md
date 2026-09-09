@@ -20,8 +20,8 @@ One markdown file per concept, grouped into topic subdirectories:
 docs/knowledge/
   index.md                          optional listing        (reserved name)
   log.md                            history, newest first   (reserved name)
-  auth/
-    token-refresh-race.md
+  decisions/
+    0001-single-shared-pg-pool.md
   database/
     connection-pool-exhaustion.md
 ```
@@ -36,15 +36,16 @@ Skip anything already obvious from the code or git history.
 
 ## Concept file
 
-`type` is the only required frontmatter key. Use `Decision`, `Incident`, or
-`Constraint`. Add `title`, `description`, `tags`, and `status`
-(`draft | stable | deprecated`) when useful.
+`type` is the only required frontmatter key. Add `title`, `description`, `tags`
+when useful. Actor strings for `generated` / `verified`: `human:<id>`,
+`<producer>/<version>`, or `process:<id>`.
+
+### type: Incident - a bug that took real work
 
 ```markdown
 ---
 type: Incident
 title: Token refresh race on concurrent requests
-description: Parallel requests each refreshed the token, invalidating the others.
 tags: [auth, concurrency]
 status: stable
 ---
@@ -57,6 +58,26 @@ status: stable
 
 Provenance fields (`generated`, `verified`) are optional; omit them unless the project asks for them.
 
+### type: Decision - an architectural choice (Nygard ADR)
+
+Number these: `docs/knowledge/decisions/0001-<slug>.md`, `0002-...`. Lifecycle
+`status: proposed | accepted | superseded` (ADR values; OKF tolerates them).
+
+```markdown
+---
+type: Decision
+title: Use a single shared Postgres pool
+tags: [database]
+status: accepted
+generated: { by: "human:matteo", at: 2026-09-09T10:00:00Z }
+---
+
+- **Context:** what forces a choice now - constraints and pressures.
+- **Decision:** what we are doing.
+- **Consequences:** what gets easier, what gets harder, what we accept.
+- **Alternatives:** each option rejected, and why.
+```
+
 ## log.md
 
 Newest first, ISO date headings:
@@ -65,14 +86,17 @@ Newest first, ISO date headings:
 # Knowledge Update Log
 
 ## 2026-09-09
-* **Add**: [/auth/token-refresh-race.md](/auth/token-refresh-race.md) - fixed with a refresh mutex.
+* **Add**: [/decisions/0001-single-shared-pg-pool.md](/decisions/0001-single-shared-pg-pool.md) - one process-wide pool.
 ```
 
 ## Rules
 
-- Append; do not rewrite a past concept. Supersede it: set the old file's
-  `status: deprecated` and link to the replacement with a bundle-relative path
-  (`/database/new-pooling.md`).
+- Append; do not rewrite a past concept's substance.
+- **Superseding an Incident/Constraint:** set the old file's `status: deprecated`
+  and link the replacement with a bundle-relative path (`/database/new-pooling.md`).
+- **Superseding a Decision:** keep the old file, set `status: superseded`, add a
+  `superseded_by: /decisions/0007-<slug>.md` line. Never edit an accepted
+  Decision's substance - write a new numbered one.
 - Never paste secrets, tokens, credentials, or full environment variables.
 - Write the concept file and its `log.md` line in the same change as the fix or
   decision, not "later".

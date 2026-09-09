@@ -32,7 +32,17 @@ a real need forces it, not in anticipation.
   docstring restating the signature.
 - Delete commented-out code and stale TODOs.
 
-## Red flags
+## Rationalization table
+
+| Excuse | Reality |
+|--------|---------|
+| "Adding the abstraction now saves time later." | You pay for it now and every read until "later" arrives - if it ever does. |
+| "It's more flexible this way." | Flexibility nobody asked for is just surface area for bugs. |
+| "The comment explains the clever bit." | Delete the clever bit. Plain code needs no explanation. |
+| "I'll leave the old code commented out just in case." | Git remembers it. Delete it. |
+| "One more option can't hurt." | Every option doubles the states to test and reason about. |
+
+## Red flags - STOP
 
 - "This might be useful later."
 - An interface with one implementation and one caller.
