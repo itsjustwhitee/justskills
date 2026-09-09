@@ -13,12 +13,12 @@ LICENSE                        MIT
 skills/                        OKF bundle root
   index.md                     bundle listing (OKF)
   log.md                       update history (OKF)
-  keep-it-simple/              minimal solution + scarce comments             (draft)
+  keep-it-simple/              minimal solution + scarce comments
   safe-git/                    confirm before git writes, protect main
   no-secrets-in-output/        keep keys/tokens/env values out of output
   conventional-commits/        commit message format + emoji
   open-knowledge-tracking/     docs/knowledge/ decision & incident log
-  clarify-before-building/     objective + verification before feature work   (draft)
+  clarify-before-building/     objective + verification before feature work
   verify-before-done/          no "it works" claim without fresh evidence     (draft)
   stop-after-repeated-failure/ 3-strikes rule                                 (draft)
   delegate-with-handoff/       task defined, cheap fresh agent, handoff, verify (draft)
@@ -61,10 +61,13 @@ place instead of copying files by hand.
   bundle. No OKF version is pinned - follow whatever the spec currently defines.
   Both specs ignore each other's extra frontmatter keys.
 - **Testing status.** `conventional-commits` and `open-knowledge-tracking` pass
-  application tests. `keep-it-simple`, `clarify-before-building`,
-  `verify-before-done`, and `stop-after-repeated-failure` are `status: draft`
-  until they pass subagent pressure tests. `safe-git` and `no-secrets-in-output`
-  are plain prohibitions and ship as `stable`.
+  application tests. `keep-it-simple` and `clarify-before-building` pass
+  baseline-vs-skill tests: a fresh agent without the skill over-engineers /
+  scaffolds on assumptions, with the skill it stays minimal / asks first.
+  `verify-before-done` and `stop-after-repeated-failure` stay `draft` - a
+  single-shot fresh agent already complies without them, so their value is only
+  in long, context-degraded sessions, which that test cannot measure. `safe-git`
+  and `no-secrets-in-output` are plain prohibitions and ship as `stable`.
 
 ## Related
 

@@ -3,7 +3,7 @@ name: clarify-before-building
 description: Use before starting a new feature, changing architecture or a public interface, or acting on a request with more than one reasonable interpretation - surfaces the objective and the verification criteria first.
 type: Skill
 title: Clarify Before Building
-status: draft
+status: stable
 ---
 
 # Clarify Before Building

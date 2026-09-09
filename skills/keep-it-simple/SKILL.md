@@ -3,7 +3,7 @@ name: keep-it-simple
 description: Use before writing or refactoring any code - keeps the solution minimal (YAGNI, KISS) and comments scarce.
 type: Skill
 title: Keep It Simple
-status: draft
+status: stable
 ---
 
 # Keep It Simple

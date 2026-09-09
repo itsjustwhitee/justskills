@@ -18,3 +18,6 @@
   `conventional-commits`; added rationalization tables to the discipline skills;
   `open-knowledge-tracking` Decision concepts now follow the Nygard ADR format
   (numbered `decisions/NNNN-*.md`, `status: proposed|accepted|superseded`).
+* **Update**: `keep-it-simple` and `clarify-before-building` promoted to
+  `stable` after baseline-vs-skill tests; `verify-before-done` and
+  `stop-after-repeated-failure` kept `draft`.
