@@ -33,9 +33,6 @@ Format: `<emoji> <type>(<scope>): <subject>`
 - Blank line after the subject, then wrap the body at 72 columns and explain *why*, not *what*.
 - Breaking change: footer line `BREAKING CHANGE: <description>`.
 - Issue references go in the footer: `Refs: #123`.
-
-## Guardrails
-
-- Never run `git commit` without explicit user confirmation.
-- Never `git push` to `main` or `master`.
 - One logical change per commit - do not bundle unrelated edits.
+
+When to commit and which branches are protected: see `safe-git`.
