@@ -1,0 +1,7 @@
+{
+  "name": "justskills",
+  "version": "0.1.0",
+  "description": "Runtime-agnostic agent skills: conventional commits, open-knowledge tracking, clarify-before-building, stop-after-repeated-failure.",
+  "author": { "name": "justwhitee" },
+  "license": "MIT"
+}
