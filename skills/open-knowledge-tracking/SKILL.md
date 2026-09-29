@@ -47,7 +47,6 @@ title: Token refresh race on concurrent requests
 description: Parallel requests each refreshed the token, invalidating the others.
 tags: [auth, concurrency]
 status: stable
-generated: { by: "claude-code/claude-sonnet-5", at: 2026-09-09T10:00:00Z }
 ---
 
 - **Symptom:** what was observed
@@ -56,8 +55,7 @@ generated: { by: "claude-code/claude-sonnet-5", at: 2026-09-09T10:00:00Z }
 - **Reasoning:** why this option over the alternatives considered
 ```
 
-Actor strings for `generated` / `verified`: `human:<id>`, `<producer>/<version>`,
-or `process:<id>`.
+Provenance fields (`generated`, `verified`) are optional; omit them unless the project asks for them.
 
 ## log.md
 
