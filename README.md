@@ -20,6 +20,7 @@ skills/                        OKF bundle root
   open-knowledge-tracking/     docs/knowledge/ decision & incident log
   clarify-before-building/     objective + verification before feature work   (draft)
   stop-after-repeated-failure/ 3-strikes rule                                 (draft)
+  delegate-with-handoff/       task defined, cheap fresh agent, handoff, verify (draft)
 ```
 
 ## Install
