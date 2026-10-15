@@ -13,7 +13,7 @@ OKF concept (`type: Skill`), per the current spec:
 * [No Secrets In Output](/no-secrets-in-output/SKILL.md) - keep keys, tokens, env values out of output and commits
 * [Conventional Commits](/conventional-commits/SKILL.md) - commit message format with a leading gitmoji
 * [Open Knowledge Tracking](/open-knowledge-tracking/SKILL.md) - maintain a docs/knowledge/ OKF bundle of decisions and incidents
-* [Task Knowledge Organize](/task-knowledge-organize/SKILL.md) - cross-repo OKF bundle under ~/knowledge/<TASK-ID>/, cross-linked by topic (draft)
+* [Task Knowledge Organize](/task-knowledge-organize/SKILL.md) - cross-repo OKF bundle under ~/knowledge/<TASK-ID>/, recursive subtask folders, cross-linked by topic (draft)
 * [Clarify Before Building](/clarify-before-building/SKILL.md) - fix objective and verification before feature work
 * [Verify Before Done](/verify-before-done/SKILL.md) - no "it works" claim without fresh evidence (draft)
 * [Stop After Repeated Failure](/stop-after-repeated-failure/SKILL.md) - stop and ask after 3 failed attempts at one task (draft)
