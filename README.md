@@ -18,6 +18,7 @@ skills/                        OKF bundle root
   no-secrets-in-output/        keep keys/tokens/env values out of output
   conventional-commits/        commit message format + emoji
   open-knowledge-tracking/     docs/knowledge/ decision & incident log
+  task-knowledge-organize/     ~/knowledge/<TASK-ID>/ cross-repo OKF bundle     (draft)
   clarify-before-building/     objective + verification before feature work
   verify-before-done/          no "it works" claim without fresh evidence     (draft)
   stop-after-repeated-failure/ 3-strikes rule                                 (draft)

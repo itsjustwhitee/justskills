@@ -1,5 +1,12 @@
 # Directory Update Log
 
+## 2026-10-15
+* **Create**: `task-knowledge-organize` - companion to `open-knowledge-tracking`
+  for knowledge tied to a tracked task/ticket that spans repos or has no repo
+  at all; roots the OKF bundle at `~/knowledge/<TASK-ID>/` with a per-task
+  index/log plus a hand-maintained global `~/knowledge/index.md` cross-linking
+  by topic. Kept `draft`.
+
 ## 2026-10-08
 * **Create**: `delegate-with-handoff` - orchestrator defines each task, dispatches it to a
   context-free agent on the cheapest capable model with a written handoff, then verifies.
