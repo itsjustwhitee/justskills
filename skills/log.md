@@ -1,5 +1,10 @@
 # Directory Update Log
 
+## 2026-11-09
+* **Update**: `delegate-with-handoff` - new step "Split into parallel pieces": cut work
+  along file boundaries, share a written contract, launch independent workers in one
+  message; added the matching red flag.
+
 ## 2026-10-15
 * **Create**: `task-knowledge-organize` - companion to `open-knowledge-tracking`
   for knowledge tied to a tracked task/ticket that spans repos or has no repo

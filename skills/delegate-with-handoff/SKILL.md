@@ -1,6 +1,6 @@
 ---
 name: delegate-with-handoff
-description: Use when you have a task to carry out and the runtime can start sub-agents - define the task first, then hand it to a fresh agent with no inherited context, on the cheapest model that can do it, with a written handoff carrying exactly the knowledge it needs; you stay the orchestrator and verify the result.
+description: Use when you have a task to carry out and the runtime can start sub-agents - define the task first, then hand it to a fresh agent with no inherited context, on the cheapest model that can do it, with a written handoff carrying exactly the knowledge it needs, splitting independent work across parallel agents; you stay the orchestrator and verify the result.
 type: Skill
 title: Delegate With Handoff
 status: draft
@@ -28,7 +28,19 @@ A worker cannot ask what you meant. Before starting one, write down:
 If any of these is unclear, settle it first (with the user if it is their call). A vague
 task delegated is a wasted run.
 
-## 2. Pick the cheapest capable worker
+## 2. Split into parallel pieces
+
+One worker per independent piece, never one worker for the whole job:
+
+- Cut the work along file boundaries (backend / UI / docs, one app each, one module
+  each) so no two workers change the same file.
+- Write the shared contract the pieces meet on (API shapes, file formats, names) and put
+  it in every handoff that needs it.
+- Launch all independent workers in the same message; run in sequence only what really
+  depends on another piece's output.
+- Verification can be split too: one checker per piece, in parallel.
+
+## 3. Pick the cheapest capable worker
 
 Choose the smallest model and effort that can do the task in one pass:
 
@@ -38,9 +50,7 @@ Choose the smallest model and effort that can do the task in one pass:
 | Ordinary feature work or bug fix with a clear spec | mid-tier model |
 | Hard design, tricky debugging, security-sensitive change | top model, only when the cheaper one would likely fail |
 
-Independent tasks go to parallel workers; dependent ones run in sequence.
-
-## 3. Write the handoff
+## 4. Write the handoff
 
 The handoff is the worker's whole world. Include only what it needs:
 
@@ -58,7 +68,7 @@ Point to files rather than pasting them; paste only what the worker cannot read 
 (conversation decisions, user preferences, screenshots described in words). Never put
 secrets in a handoff.
 
-## 4. Check the result
+## 5. Check the result
 
 The worker's report is a claim, not proof. Read the diff, rerun the verification, and look
 at the result yourself (screenshot, output) before telling the user it is done. If it fell
@@ -74,6 +84,7 @@ the fix is smaller than another handoff.
 ## Red flags
 
 - Dispatching with "fix the layout" and no acceptance criteria.
+- One worker for several independent pieces (e.g. backend + UI + docs) that could run in parallel.
 - Defaulting to the most capable model for a mechanical task.
 - Forwarding the whole conversation instead of a handoff.
 - Relaying the worker's "done" to the user without checking it.
